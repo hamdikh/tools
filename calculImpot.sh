@@ -27,7 +27,7 @@ usage(){
 ##
 ##
 IsCadre(){
-	if [[ "$TYPE" = "CADRE" ]]; then
+	if [ "$TYPE" = "CADRE" ]; then
 		COEF=25
 	fi
 }
@@ -38,7 +38,7 @@ IsCadre(){
 ##
 calculImpot(){
     RESULT=0
-    if [[ $NET_IMPOSABLE -le  9807 ]]; then
+    if [ $NET_IMPOSABLE -le  9807 ]; then
 		RESULT=0
     elif [ $NET_IMPOSABLE -ge  9807 ] && [ $NET_IMPOSABLE -le  27086 ]; then
         SUM=$(($NET_IMPOSABLE-9807))
@@ -90,7 +90,7 @@ run(){
 ##
 
 # Pas de paramètre 
-[[ $# -lt 1 ]] && error
+[ $# -lt 1 ] && error
 
 while getopts ":t:s:h" option; do 
     case "$option" in 
